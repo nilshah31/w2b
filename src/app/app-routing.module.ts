@@ -6,6 +6,7 @@ import { PlansAndPriceComponent } from './plans-and-price/plans-and-price.compon
 import { FaqComponent } from './faq/faq.component';
 import { ContactComponent } from './contact/contact.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { AuthGaurdService as AuthGuard } from './auth-gaurd.service' 
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -13,7 +14,7 @@ const routes: Routes = [
   { path: 'plansandprice', component: PlansAndPriceComponent  },
   { path: 'faq', component: FaqComponent },
   { path: 'contact', component: ContactComponent },
-  { path: 'dashboard', component: DashboardComponent }
+  { path: 'dashboard', component: DashboardComponent,canActivate: [AuthGuard] }
 ];
 
 @NgModule({
