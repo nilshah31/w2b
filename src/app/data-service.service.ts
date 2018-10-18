@@ -5,7 +5,6 @@ import { Router } from '@angular/router'
 })
 export class DataServiceService {
   public activeMenu : string;
-  public user : undefined;
   constructor(private router:Router) {
     this.activeMenu = router.url.toString().substr(1)!==''?router.url.toString().substr(1):'';
   }
@@ -14,11 +13,5 @@ export class DataServiceService {
   }
   setActiveMenu(newActiveMenu){
     this.activeMenu = newActiveMenu;
-  }
-  getCurrentUser(){
-
-  }
-  setCurrentUser(){
-    
   }
 }

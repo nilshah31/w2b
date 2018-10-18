@@ -10,7 +10,4 @@ export class AuthServiceService {
       return true;
     }
   }
-  public getCurrentUser(): object {
-    return Object(localStorage.getItem('user'));    
-  }
 }
