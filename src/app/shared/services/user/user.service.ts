@@ -12,21 +12,25 @@ export class UserService {
     public router: Router
   ) { }
   getCurrentUser(){
-    return  this.user || null;
+    return  this.user || undefined;
   }
   setCurrentUser(){
     let headers = new HttpHeaders({
       'content-type'    : 'application/json',
       'authKey': localStorage.getItem('authKey')
     });
+    if(this.user) return true;
     return this.http
       .get('http://localhost:8001/api/users/',{headers:headers})
       .subscribe((res)=>{ 
         this.user = res['user'];
         return true;
       },(xhr)=>{
+        localStorage.removeItem("authKey")
         return false;
-        console.log("Error")
       })
+  }
+  setUser(value){
+    this.user = value;
   }
 }

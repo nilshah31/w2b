@@ -1,64 +1,113 @@
-<div class="nav-side-menu">
-  <div class="logo grid bg-white">
-    <div class="grid__item color-3">
-      <h1><a class="link link--nukun"><i></i>zCO<span>ST</span>A</a></h1>
+<div class="navbar">
+  <div class="navbar-inner">
+    <div class="container-fluid">
+      <div class="logo grid bg-white">
+        <div class="grid__item color-3">
+          <h1><a class="link link--nukun"><i></i>zCO<span>ST</span>A</a></h1>
+        </div>
+      </div>
     </div>
+    <div>
+      <h1 class="dashboard-title">Dashboard</h1>
+    </div>
+    <!--/.container-fluid-->
   </div>
-  <i class="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>
-  <div class="menu-list">
-    <ul id="menu-content" class="menu-content collapse out">
+</div>
+<div class="main-container">
+  <div class="breadcrumbs" id="breadcrumbs">
+    <ul class="breadcrumb">
       <li>
-        <a href="#">
-          <i class="fa fa-dashboard fa-lg"></i> Dashboard
-        </a>
+        <i class="icon-home home-icon"></i>
+        <a href="#">Home</a>
+
+        <span class="divider">
+          <i class="icon-angle-right arrow-icon"></i>
+        </span>
       </li>
-      <li data-toggle="collapse" data-target="#products" class="collapsed active">
-        <a href="#"><i class="fa fa-gift fa-lg"></i> UI Elements <span class="arrow"></span></a>
-      </li>
-      <ul class="sub-menu collapse" id="products">
-        <li class="active"><a href="#">CSS3 Animation</a></li>
-        <li><a href="#">General</a></li>
-        <li><a href="#">Buttons</a></li>
-        <li><a href="#">Tabs & Accordions</a></li>
-        <li><a href="#">Typography</a></li>
-        <li><a href="#">FontAwesome</a></li>
-        <li><a href="#">Slider</a></li>
-        <li><a href="#">Panels</a></li>
-        <li><a href="#">Widgets</a></li>
-        <li><a href="#">Bootstrap Model</a></li>
-      </ul>
-      <li data-toggle="collapse" data-target="#service" class="collapsed">
-        <a href="#"><i class="fa fa-globe fa-lg"></i> Services <span class="arrow"></span></a>
-      </li>
-      <ul class="sub-menu collapse" id="service">
-        <li>New Service 1</li>
-        <li>New Service 2</li>
-        <li>New Service 3</li>
-      </ul>
-      <li data-toggle="collapse" data-target="#new" class="collapsed">
-        <a href="#"><i class="fa fa-car fa-lg"></i> New <span class="arrow"></span></a>
-      </li>
-      <ul class="sub-menu collapse" id="new">
-        <li>New New 1</li>
-        <li>New New 2</li>
-        <li>New New 3</li>
-      </ul>
-      <li>
-        <a href="#">
-          <i class="fa fa-user fa-lg"></i> Profile
+      <li class="active">Dashboard</li>
+    </ul>
+    <!--.breadcrumb-->
+
+    <!--#nav-search-->
+  </div>
+  <div class="sidebar" id="sidebar">
+    <ul class="nav nav-list">
+      <li class="active">
+        <a href="index.html">
+          <i class="icon-dashboard"></i>
+          <span class="menu-text"> Dashboard </span>
         </a>
       </li>
       <li>
-        <a href="#">
-          <i class="fa fa-users fa-lg"></i> Users
+        <a href="typography.html">
+          <i class="icon-text-width"></i>
+          <span class="menu-text"> Home </span>
         </a>
       </li>
       <li>
-        <a [routerLink]="['/']">HomePage</a>
+        <a href="#" class="dropdown-toggle">
+          <i class="icon-desktop"></i>
+          <span class="menu-text"> About Us </span>
+          <b class="arrow icon-angle-down"></b>
+        </a>
+      </li>
+      <li>
+        <a href="tables.html">
+          <i class="icon-list"></i>
+          <span class="menu-text"> Our Services </span>
+        </a>
+      </li>
+      <li>
+        <a href="#" class="dropdown-toggle">
+          <i class="icon-edit"></i>
+          <span class="menu-text"> Our Team </span>
+
+          <b class="arrow icon-angle-down"></b>
+        </a>
+      </li>
+      <li>
+        <a href="widgets.html">
+          <i class="icon-list-alt"></i>
+          <span class="menu-text"> Contact US </span>
+        </a>
+      </li>
+      <li>
+        <a href="#" class="dropdown-toggle">
+          <i class="icon-tag"></i>
+          <span class="menu-text"> Manage Your Blogs </span>
+          <b class="arrow icon-angle-down"></b>
+        </a>
+      </li>
+      <li>
+        <a href="calendar.html">
+          <i class="icon-calendar"></i>
+          <span class="menu-text">
+            Manage Your Profile
+            <span class="badge badge-transparent tooltip-error" title="" data-original-title="2&nbsp;Important&nbsp;Events">
+              <i class="icon-warning-sign red bigger-130"></i>
+            </span>
+          </span>
+        </a>
+      </li>
+      <li>
+        <a href="gallery.html">
+          <i class="icon-picture"></i>
+          <span class="menu-text"> Analytics </span>
+        </a>
+      </li>
+      <li>
+        <a href="#" class="dropdown-toggle">
+          <i class="icon-file-alt"></i>
+          <span class="menu-text">
+            <a [routerLink]="['/']">Go Back</a>
+          </span>
+          <b class="arrow icon-angle-down"></b>
+        </a>
       </li>
     </ul>
   </div>
 </div>
+
 <div class="container">
-  <h1>sdf</h1>
+  <h1></h1>
 </div>

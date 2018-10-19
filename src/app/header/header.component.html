@@ -8,11 +8,17 @@
 			</ul>
 		</div>
 		<div class="header_right">
-			<div class="login">
+			<div class="login" *ngIf="!user">
 				<ul>
 					<li><a href="#" data-toggle="modal" data-target="#myModal4"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>Login</a></li>
 					<li><a href="#" data-toggle="modal" data-target="#myModal5"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>Signup</a></li>
 				</ul>
+			</div>
+			<div class="login" *ngIf="user">
+					<ul>
+						<li>Welcome,{{user.firstName}}</li>
+						<li><a href="#" (click)="logOutuser()">Logout <span class="glyphicon glyphicon-log-out" aria-hidden="true"></span></a></li>
+					</ul>
 			</div>
 			<div class="clearfix"></div>
 		</div>

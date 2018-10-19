@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router'
+import { UserService } from '../shared/services/user/user.service'
 declare var $: any;
 @Component({
   selector: 'app-header',
@@ -10,12 +11,15 @@ declare var $: any;
 export class HeaderComponent implements OnInit {
   @Input() email    : string
   @Input() password : string
+  public user:Object;
   constructor(
-    private http: HttpClient,
-    public router: Router,
+    private http       : HttpClient,
+    public router      : Router,
+    public userService : UserService
   ) {
     this.email    = ""
     this.password = ""
+    this.user = this.userService.getCurrentUser()
   }
   ngOnInit() {
     this.email    = "";
@@ -30,5 +34,10 @@ export class HeaderComponent implements OnInit {
       },(xhr)=>{
         console.log("Error")
       })
+  }
+  logOutuser(){
+    this.userService.setUser(undefined)
+    localStorage.removeItem("authKey")
+    this.user = this.userService.getCurrentUser()
   }
 }
