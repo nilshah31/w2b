@@ -1,7 +1,8 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, ChangeDetectorRef } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router'
 import { UserService } from '../shared/services/user/user.service'
+
 declare var $: any;
 @Component({
   selector: 'app-header',
@@ -15,15 +16,24 @@ export class HeaderComponent implements OnInit {
   constructor(
     private http       : HttpClient,
     public router      : Router,
-    public userService : UserService
+    public userService : UserService,
+    private chRef      : ChangeDetectorRef
   ) {
+    let self = this;
     this.email    = ""
     this.password = ""
-    this.user = this.userService.getCurrentUser()
+//    this.user = this.userService.getCurrentUser()
+    this.userService
+      .getCurrentUser()
+      .then(function(data){
+        self.user = data;
+        chRef.detectChanges();
+      })
   }
   ngOnInit() {
     this.email    = "";
     this.password = "";
+    console.log("this.user",this.user)    
   }
   loginUser(){
     this.http

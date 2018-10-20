@@ -60,7 +60,40 @@ small {
   /* border-right: 1px solid #ccc; */
   background-color: #f2f2f2;
 }
-.main-container {
+.nav-list {
+  margin: 0;
   padding: 0;
+  list-style: none;
+  border-right: 1px solid #e5e5e5;
+}
+.nav-list>li.active {
+  background-color: #fff;
+}
+
+.nav-list>li:first-child {
+  border-top: 0;
+}
+.nav-list>li {
+  display: block;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  border-top: 1px solid #fcfcfc;
+  border-bottom: 1px solid #e5e5e5;
   position: relative;
+}
+.nav-list>li.active:after {
+  display: inline-block;
+  content: "";
+  position: absolute;
+  right: -2px;
+  top: -1px;
+  bottom: 0;
+  border-right: 2px solid #0b6cbc;
+}
+.nav-list>li.active>a, .nav-list>li.active>a:hover, .nav-list>li.active>a:focus, .nav-list>li.active>a:active {
+  background-color: #fff;
+  color: #0b6cbc;
+  font-weight: bold;
+  font-size: 13px;
 }

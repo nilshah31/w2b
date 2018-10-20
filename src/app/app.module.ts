@@ -13,7 +13,19 @@ import { TopNavBarComponent } from './top-nav-bar/top-nav-bar.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { HttpClientModule } from '@angular/common/http';
-
+import { AboutUsComponent } from './dashboard-componuts/about-us/about-us.component';
+import { YourServicesComponent } from './dashboard-componuts/your-services/your-services.component';
+import { YourTeamComponent } from './dashboard-componuts/your-team/your-team.component';
+import { ContactUsComponent } from './dashboard-componuts/contact-us/contact-us.component';
+import { BlogsComponent } from './dashboard-componuts/blogs/blogs.component';
+import { UserComponent } from './dashboard-componuts/user/user.component';
+import { AnalyticsComponent } from './dashboard-componuts/analytics/analytics.component';
+import { SidebarComponent } from './dashboard-componuts/sidebar/sidebar.component';
+import { NavbarComponent } from './dashboard-componuts/navbar/navbar.component';
+import { UserDashboardComponent  } from './dashboard-componuts/user-dashboard/user-dashboard.component';
+import { UserHomeComponent  } from './dashboard-componuts/user-home/user-home.component';
+import { DataServiceService } from './data-service.service'
+import { UserService } from './shared/services/user/user.service'
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,7 +37,18 @@ import { HttpClientModule } from '@angular/common/http';
     DashboardComponent,
     TopNavBarComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    AboutUsComponent,
+    YourServicesComponent,
+    YourTeamComponent,
+    ContactUsComponent,
+    BlogsComponent,
+    UserComponent,
+    AnalyticsComponent,
+    SidebarComponent,
+    NavbarComponent,
+    UserDashboardComponent,
+    UserHomeComponent
   ],
   imports: [
     BrowserModule,
@@ -33,7 +56,7 @@ import { HttpClientModule } from '@angular/common/http';
     HttpClientModule,
     FormsModule
   ],
-  providers: [],
+  providers: [DataServiceService,UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

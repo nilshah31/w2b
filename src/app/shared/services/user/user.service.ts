@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable,ChangeDetectorRef } from '@angular/core';
 import { HttpClient,HttpHeaders } from '@angular/common/http';
 import { Router } from '@angular/router'
 
@@ -10,9 +10,14 @@ export class UserService {
   constructor(
     private http: HttpClient,
     public router: Router
-  ) { }
-  getCurrentUser(){
-    return  this.user || undefined;
+  ) {
+  }
+  async getCurrentUser(){
+    if(!this.user){
+      let isUserAuthonticated = await this.setCurrentUser()
+      return isUserAuthonticated?this.user:undefined;
+    }
+    return this.user || undefined;
   }
   setCurrentUser(){
     let headers = new HttpHeaders({
@@ -23,6 +28,7 @@ export class UserService {
     return this.http
       .get('http://localhost:8001/api/users/',{headers:headers})
       .subscribe((res)=>{ 
+        console.log("res",res)
         this.user = res['user'];
         return true;
       },(xhr)=>{

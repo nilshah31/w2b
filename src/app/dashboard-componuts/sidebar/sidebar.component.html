@@ -1,0 +1,7 @@
+<div class="sidebar" id="sidebar">
+  <ul class="nav nav-list">
+    <li [ngClass]="{'active': activeDashboardMenu===menu.value}" *ngFor="let menu of dashboardMenuItems">
+      <a [routerLink]="['/'+menu.value]">{{menu.title}}</a>
+    </li>
+  </ul>  
+</div>
